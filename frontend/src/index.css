@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .field { @apply w-full rounded-lg border border-portal-line bg-white px-3 py-2.5 text-portal-ink placeholder:text-slate-400 focus:border-portal-primary focus:outline-none focus:ring-2 focus:ring-portal-primary/20 disabled:opacity-60; }
+  .label { @apply mb-1.5 block text-sm font-medium text-portal-ink; }
+  .btn-primary { @apply inline-flex w-full items-center justify-center gap-2 rounded-lg bg-portal-primary px-4 py-2.5 font-semibold text-white transition hover:bg-portal-primary-dark disabled:opacity-60; }
+  .card { @apply rounded-2xl border border-portal-line bg-white shadow-sm; }
+}
