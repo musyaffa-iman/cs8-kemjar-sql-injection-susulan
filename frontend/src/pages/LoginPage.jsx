@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { signIn, session } from "../lib/api";
 import Spinner from "../components/Spinner";
 import Notice from "../components/Notice";
+import PasswordField from "../components/PasswordField";
 import logo from "../assets/netlab2.svg";
 
 export default function LoginPage() {
@@ -52,7 +53,7 @@ export default function LoginPage() {
           </div>
           <div>
             <label htmlFor="pass" className="label">Password</label>
-            <input id="pass" type="password" className="field" value={pass} onChange={(e) => setPass(e.target.value)} placeholder="Enter password" required disabled={loading} />
+            <PasswordField id="pass" value={pass} onChange={(e) => setPass(e.target.value)} placeholder="Enter password" disabled={loading} />
           </div>
           <button type="submit" className="btn-primary" disabled={loading}>
             {loading ? <><Spinner /> Signing in...</> : "Sign in"}

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { verifyPassword } from "../lib/api";
 import Spinner from "../components/Spinner";
 import Notice from "../components/Notice";
+import PasswordField from "../components/PasswordField";
 
 export default function CheckPasswordPage() {
   const [user, setUser] = useState("");
@@ -38,7 +39,7 @@ export default function CheckPasswordPage() {
           </div>
           <div>
             <label htmlFor="pass" className="label">Password</label>
-            <input id="pass" type="password" className="field" value={pass} onChange={(e) => setPass(e.target.value)} required disabled={loading} />
+            <PasswordField id="pass" value={pass} onChange={(e) => setPass(e.target.value)} disabled={loading} />
           </div>
           <button type="submit" className="btn-primary" disabled={loading}>
             {loading ? <><Spinner /> Checking...</> : "Check Password"}
